@@ -152,7 +152,9 @@ form {
 
 #footer a {
   text-decoration: none;
-  font-weight:bolder;
+  font-weight: bolder;
 }
 
-#footer a :hover
+#footer a:hover {
+  text-decoration: underline;
+}
