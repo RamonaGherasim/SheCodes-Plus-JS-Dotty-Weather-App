@@ -25,131 +25,133 @@
   </head>
   <body>
     <div class="container">
-      <div class="row justify-content-centre">
-        <div class="col-6">
-          <div class="row">
-            <div class="col-6 align-self-start" id="celsius-fahrenheit">
-              <a href="#" id="celsius-link" class="active"> °C |</a>
-              <a href="#" id="fahrenheit-link"> | °F </a>
+      <div class="weather-app-wrapper">
+        <div class="row justify-content-centre">
+          <div class="col-6">
+            <div class="row">
+              <div class="col-6 align-self-start" id="celsius-fahrenheit">
+                <a href="#" id="celsius-link" class="active"> °C |</a>
+                <a href="#" id="fahrenheit-link"> | °F </a>
+              </div>
+
+              <div class="col-6 align-self-end" id="high-and-low">
+                H: 8° | L: 6°
+              </div>
             </div>
 
-            <div class="col-6 align-self-end" id="high-and-low">
-              H: 8° | L: 6°
+            <div class="row">
+              <div class="col current-temperature-display">
+                <h1 id="current-temperature-display">°</h1>
+              </div>
+
+              <div class="col weather-icon">
+                <img
+                  src="https://openweathermap.org/img/wn/01n@2x.png"
+                  alt="night clear sky"
+                  id="icon"
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col current-city">
+                <h2 id="city"></h2>
+              </div>
+
+              <div class="col weather-word-description">
+                <h2 id="description"></h2>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 align-self-start">
+                <p id="current-date"></p>
+              </div>
             </div>
           </div>
 
-          <div class="row">
-            <div class="col current-temperature-display">
-              <h1 id="current-temperature-display">°</h1>
-            </div>
-
-            <div class="col weather-icon">
-              <img
-                src="https://openweathermap.org/img/wn/01n@2x.png"
-                alt="night clear sky"
-                id="icon"
+          <div class="col-6">
+            <form id="search-form">
+              <input
+                type="text"
+                placeholder="Enter a location here"
+                id="search-box"
+                autocomplete="off"
+                autofocus="on"
               />
-            </div>
-          </div>
+              <button type="sumbit-button" class="btn btn-outline-secondary">
+                <i class="fas fa-search-location"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                id="my-location-button"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
+            </form>
+            <hr />
+            <div class="row">
+              <div class="col weather-details">
+                <div class="real-feel">
+                  <p>Real feel</p>
+                  <span id="degree-real-feel">
+                    <p>°</p>
+                  </span>
+                </div>
 
-          <div class="row">
-            <div class="col current-city">
-              <h2 id="city"></h2>
-            </div>
+                <div class="humidity">
+                  <p>Humidity</p>
+                  <span id="humidity-level">
+                    <p>%</p>
+                  </span>
+                </div>
 
-            <div class="col weather-word-description">
-              <h2 id="description"></h2>
-            </div>
-          </div>
+                <div class="wind">
+                  <p>Wind</p>
+                  <span id="wind-speed">
+                    <p>km/h</p>
+                  </span>
+                </div>
 
-          <div class="row">
-            <div class="col-12 align-self-start">
-              <p id="current-date"></p>
-            </div>
-          </div>
-        </div>
+                <hr />
 
-        <div class="col-6">
-          <form id="search-form">
-            <input
-              type="text"
-              placeholder="Enter a location here"
-              id="search-box"
-              autocomplete="off"
-              autofocus="on"
-            />
-            <button type="sumbit-button" class="btn btn-outline-secondary">
-              <i class="fas fa-search-location"></i>
-            </button>
-            <button
-              type="button"
-              class="btn btn-outline-secondary"
-              id="my-location-button"
-            >
-              <i class="fas fa-map-marker-alt"></i>
-            </button>
-          </form>
-          <hr />
-          <div class="row">
-            <div class="col weather-details">
-              <div class="real-feel">
-                <p>Real feel</p>
-                <span id="degree-real-feel">
-                  <p>°</p>
-                </span>
-              </div>
+                <div class="row">
+                  <div class="col weather-forecast">
+                    <div class="first-day">
+                      <p>Sun, 28 February</p>
+                      <span class="temperature-first-day">
+                        <p>12°</p>
+                      </span>
+                    </div>
 
-              <div class="humidity">
-                <p>Humidity</p>
-                <span id="humidity-level">
-                  <p>%</p>
-                </span>
-              </div>
+                    <div class="second-day">
+                      <p>Mon, 1 March</p>
+                      <span class="temperature-second-day">
+                        <p>11°</p>
+                      </span>
+                    </div>
 
-              <div class="wind">
-                <p>Wind</p>
-                <span id="wind-speed">
-                  <p>km/h</p>
-                </span>
-              </div>
+                    <div class="third-day">
+                      <p>Tue, 2 March</p>
+                      <span class="temperature-third-day">
+                        <p>9°</p>
+                      </span>
+                    </div>
 
-              <hr />
+                    <div class="fourth-day">
+                      <p>Wed, 3 March</p>
+                      <span class="temperature-fourth-day">
+                        <p>12°</p>
+                      </span>
+                    </div>
 
-              <div class="row">
-                <div class="col weather-forecast">
-                  <div class="first-day">
-                    <p>Sun, 28 February</p>
-                    <span class="temperature-first-day">
-                      <p>12°</p>
-                    </span>
-                  </div>
-
-                  <div class="second-day">
-                    <p>Mon, 1 March</p>
-                    <span class="temperature-second-day">
-                      <p>11°</p>
-                    </span>
-                  </div>
-
-                  <div class="third-day">
-                    <p>Tue, 2 March</p>
-                    <span class="temperature-third-day">
-                      <p>9°</p>
-                    </span>
-                  </div>
-
-                  <div class="fourth-day">
-                    <p>Wed, 3 March</p>
-                    <span class="temperature-fourth-day">
-                      <p>12°</p>
-                    </span>
-                  </div>
-
-                  <div class="fifth-day">
-                    <p>Thur, 4 March</p>
-                    <span class="temperature-fifth-day">
-                      <p>15°</p>
-                    </span>
+                    <div class="fifth-day">
+                      <p>Thur, 4 March</p>
+                      <span class="temperature-fifth-day">
+                        <p>15°</p>
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
