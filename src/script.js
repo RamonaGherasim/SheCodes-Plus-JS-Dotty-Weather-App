@@ -6,12 +6,15 @@ let day = days[now.getDay()];
 let months = ["January", "February", "March", "April", "May", "June", "July", "August", "Septe,ber", "October", "November", "December"];
 let month = months[now.getMonth()];
 let hour = now.getHours ();
+if ( hour<10) {
+  hours = `0${hour}`
+}
 let minutes = now.getMinutes ();
 if (minutes < 10) {
-currentDate.innerHTML = `Last updated on ${day}, ${date} ${month} at ${hour}:0${minutes}`
-} else {
-  currentDate.innerHTML = `Last updated on ${day}, ${date} ${month} at ${hour}:${minutes}`
+  minutes = `0${minutes}`
 }
+currentDate.innerHTML = `Last updated on ${day}, ${date} ${month} at ${hour}:${minutes}`
+
 
   function fahrenheitConvert (event) {
   event.preventDefault ();
