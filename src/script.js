@@ -15,24 +15,6 @@ if (minutes < 10) {
 }
 currentDate.innerHTML = `Last updated on ${day}, ${date} ${month} at ${hour}:${minutes}`
 
-
-  function fahrenheitConvert (event) {
-  event.preventDefault ();
-  let temperatureDisplay = document.querySelector ("#current-temperature-display");
-  temperatureDisplay.innerHTML = "50°";
-}
-let fahrenheitLink = document.querySelector ("#fahrenheit-link");
-  fahrenheitLink.addEventListener("click", fahrenheitConvert)
-
-  function celsiusConvert (event) {
-  event.preventDefault
-  let temperatureDisplay = document.querySelector ("#current-temperature-display");
-  temperatureDisplay.innerHTML = "7°";
-}
-
-let celsiusLink = document.querySelector ("#celsius-link");
-  celsiusLink.addEventListener("click", celsiusConvert)
-
 function showSearchedCityWeatherResult (response) {
   document.querySelector("#current-temperature-display").innerHTML = `${Math.round(response.data.main.temp)}°`;
   document.querySelector ("#city").innerHTML = response.data.name;
@@ -42,6 +24,7 @@ function showSearchedCityWeatherResult (response) {
   document.querySelector ("#description").innerHTML = response.data.weather[0].description;
   document.querySelector("#icon").setAttribute ("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`) 
   document.querySelector("#icon").setAttribute ("alt", response.data.weather[0].description);
+  celsiusTemperature = response.data.main.temp;
 }
 
 function searchCity (city) {
@@ -69,6 +52,7 @@ function showMyCurrentLocationWeather(response) {
   document.querySelector ("#description").innerHTML = response.data.weather[0].description;
   document.querySelector("#icon").setAttribute ("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`) 
   document.querySelector("#icon").setAttribute ("alt", response.data.weather[0].description);
+  celsiusTemperature = response.data.main.temp;
 }
 
 function searchLocation (position) {
@@ -81,6 +65,23 @@ function searchLocation (position) {
     event.preventDefault ();
   navigator.geolocation.getCurrentPosition (searchLocation);
 }
+
+  function fahrenheitConvert (event) {
+  event.preventDefault ();
+  document.querySelector ("#current-temperature-display").innerHTML = `${Math.round((celsiusTemperature * 9) / 5 + 32)}°`;
+}
+let fahrenheitLink = document.querySelector ("#fahrenheit-link");
+  fahrenheitLink.addEventListener("click", fahrenheitConvert)
+
+  function celsiusConvert (event) {
+  event.preventDefault ();
+  document.querySelector ("#current-temperature-display").innerHTML = celsiusTemperature;
+}
+
+let celsiusLink = document.querySelector ("#celsius-link");
+  celsiusLink.addEventListener("click", celsiusConvert)
+
+celsiusTemperature = null
 
   let myLocationButton = document.querySelector("#my-location-button");
   myLocationButton.addEventListener("click", getMyLocation);
