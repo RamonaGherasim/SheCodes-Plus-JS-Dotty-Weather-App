@@ -83,12 +83,9 @@ form {
   text-transform: capitalize;
 }
 
-.moon-icon {
-  text-align: center;
-  font-size: 80px;
+#icon {
   position: relative;
   top: 135px;
-  color: black;
   left: 40px;
 }
 
