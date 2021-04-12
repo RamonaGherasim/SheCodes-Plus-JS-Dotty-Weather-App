@@ -31,6 +31,10 @@ form {
   max-width: 80%;
 }
 
+#icon {
+  width: 70%;
+}
+
 #search-box {
   line-height: 2.1;
   width: 250px;
