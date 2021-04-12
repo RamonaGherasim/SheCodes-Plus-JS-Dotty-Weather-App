@@ -1,6 +1,5 @@
 let now = new Date ();
 let currentDate = document.querySelector ("#current-date");
-let currentTime = document.querySelector("#current-time")
 let date = now.getDate ();
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let day = days[now.getDay()];
@@ -8,15 +7,14 @@ let months = ["January", "February", "March", "April", "May", "June", "July", "A
 let month = months[now.getMonth()];
 let hour = now.getHours ();
 let minutes = now.getMinutes ();
-currentDate.innerHTML = `${day}, ${date} ${month}`
 if (minutes < 10) {
-currentTime.innerHTML = `${hour}:0${minutes}`
+currentDate.innerHTML = `Last updated on ${day}, ${date} ${month} at ${hour}:0${minutes}`
 } else {
-  currentTime.innerHTML = `${hour}:${minutes}`
+  currentDate.innerHTML = `Last updated on ${day}, ${date} ${month} at ${hour}:${minutes}`
 }
 
   function fahrenheitConvert (event) {
-  event.preventDefault
+  event.preventDefault ();
   let temperatureDisplay = document.querySelector ("#current-temperature-display");
   temperatureDisplay.innerHTML = "50°";
 }
