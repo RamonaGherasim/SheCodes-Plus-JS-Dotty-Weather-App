@@ -69,6 +69,8 @@ function searchLocation (position) {
   function fahrenheitConvert (event) {
   event.preventDefault ();
   document.querySelector ("#current-temperature-display").innerHTML = `${Math.round((celsiusTemperature * 9) / 5 + 32)}°`;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 }
 let fahrenheitLink = document.querySelector ("#fahrenheit-link");
   fahrenheitLink.addEventListener("click", fahrenheitConvert)
@@ -76,6 +78,8 @@ let fahrenheitLink = document.querySelector ("#fahrenheit-link");
   function celsiusConvert (event) {
   event.preventDefault ();
   document.querySelector ("#current-temperature-display").innerHTML = `${Math.round(celsiusTemperature)}°`;
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 
 let celsiusLink = document.querySelector ("#celsius-link");

@@ -48,11 +48,19 @@ form {
 #celsius-link,
 #fahrenheit-link {
   color: aliceblue;
-  text-decoration: none;
   font-size: 18px;
   font-weight: 300;
   position: relative;
   left: 20px;
+}
+
+.active {
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
 }
 
 #high-and-low {
