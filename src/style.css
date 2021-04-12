@@ -96,14 +96,6 @@ form {
   padding-bottom: 50px;
 }
 
-#current-time {
-  text-align: right;
-  padding-bottom: 70px;
-  position: relative;
-  top: 52px;
-  right: 20px;
-}
-
 .weather-details p {
   display: inline;
 }
