@@ -73,6 +73,7 @@ form {
 
 #description {
   text-align: center;
+  text-transform: capitalize;
   color: black;
   position: relative;
   bottom: -15px;
@@ -92,6 +93,7 @@ form {
   position: relative;
   top: 52px;
   left: 20px;
+  padding-bottom: 50px;
 }
 
 #current-time {
