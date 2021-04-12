@@ -75,7 +75,7 @@ let fahrenheitLink = document.querySelector ("#fahrenheit-link");
 
   function celsiusConvert (event) {
   event.preventDefault ();
-  document.querySelector ("#current-temperature-display").innerHTML = Math.round(celsiusTemperature);
+  document.querySelector ("#current-temperature-display").innerHTML = `${Math.round(celsiusTemperature)}°`;
 }
 
 let celsiusLink = document.querySelector ("#celsius-link");
