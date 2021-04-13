@@ -31,10 +31,6 @@ form {
   max-width: 80%;
 }
 
-#icon {
-  width: 70%;
-}
-
 #search-box {
   line-height: 2.1;
   width: 250px;
@@ -90,7 +86,7 @@ form {
   color: whitesmoke;
   position: relative;
   bottom: -15px;
-  right: 50px;
+  right: 10px;
 }
 
 #description:first-letter {
@@ -98,9 +94,10 @@ form {
 }
 
 #icon {
+  width: 70%;
   position: relative;
-  top: 135px;
-  left: 40px;
+  top: 100px;
+  left: 30px;
 }
 
 #current-date {
