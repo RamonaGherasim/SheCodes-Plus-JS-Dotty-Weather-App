@@ -136,6 +136,10 @@ form {
   margin-left: 150px;
 }
 
+.forecast-min-temp {
+  opacity: 0.5;
+}
+
 .temperature-second-day {
   margin-left: 171px;
 }
