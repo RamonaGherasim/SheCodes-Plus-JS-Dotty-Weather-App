@@ -15,6 +15,26 @@ if (minutes < 10) {
 }
 currentDate.innerHTML = `Last updated on ${day}, ${date} ${month} at ${hour}:${minutes}`
 
+function displayForecast () {
+  let forecastElement = document.querySelector ("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+  days.forEach(function (day) {
+  forecastHTML = forecastHTML + ` 
+                    <div class="first-day">
+                      <p class="forecast-date">Sun, 28 February</p>
+                      <span class="temperature-first-day">
+                        <p class="forecast-max-temp">12°</p>
+                        |
+                        <p class="forecast-min-temp">8°</p>
+                      </span>
+                    </div>
+                  </div>`;
+});
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+}
+
 function showSearchedCityWeatherResult (response) {
   document.querySelector("#current-temperature-display").innerHTML = `${Math.round(response.data.main.temp)}°`;
   document.querySelector ("#city").innerHTML = response.data.name;
@@ -72,6 +92,7 @@ function searchLocation (position) {
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
 }
+
 let fahrenheitLink = document.querySelector ("#fahrenheit-link");
   fahrenheitLink.addEventListener("click", fahrenheitConvert)
 
@@ -85,9 +106,11 @@ let fahrenheitLink = document.querySelector ("#fahrenheit-link");
 let celsiusLink = document.querySelector ("#celsius-link");
   celsiusLink.addEventListener("click", celsiusConvert)
 
-celsiusTemperature = null
+  celsiusTemperature = null;
 
   let myLocationButton = document.querySelector("#my-location-button");
   myLocationButton.addEventListener("click", getMyLocation);
 
   searchCity ("London");
+  displayForecast ();
+
