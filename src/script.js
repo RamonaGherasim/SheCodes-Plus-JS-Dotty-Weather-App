@@ -22,7 +22,7 @@ function displayForecast () {
   days.forEach(function (day) {
   forecastHTML = forecastHTML + ` 
                     <div class="first-day">
-                      <p class="forecast-date">Sun, 28 February</p>
+                      <p class="forecast-date">${day}</p>
                       <span class="temperature-first-day">
                         <p class="forecast-max-temp">12°</p>
                         |
