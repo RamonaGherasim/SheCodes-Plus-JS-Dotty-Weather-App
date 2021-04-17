@@ -61,8 +61,10 @@ function showSearchedCityWeatherResult (response) {
   document.querySelector ("#description").innerHTML = response.data.weather[0].description;
   document.querySelector("#icon").setAttribute ("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`) 
   document.querySelector("#icon").setAttribute ("alt", response.data.weather[0].description);
+  document.querySelector("#today-high").innerHTML = `H: ${Math.round(response.data.main.temp_max)}° | `;
+  document.querySelector("#today-low").innerHTML = `| L: ${Math.round(response.data.main.temp_min)}°`;
   celsiusTemperature = response.data.main.temp;
-
+  console.log (response)
   getForecast (response.data.coord);
 }
 
