@@ -103,9 +103,8 @@ form {
 #current-date {
   color: whitesmoke;
   position: relative;
-  top: 52px;
+  top: 82px;
   left: 20px;
-  padding-bottom: 50px;
 }
 
 .weather-details p {
@@ -128,6 +127,10 @@ form {
   margin-left: 226px;
 }
 
+.weather-forecast {
+  padding-bottom: 15px;
+}
+
 .weather-forecast p {
   display: inline;
 }
@@ -140,26 +143,12 @@ form {
   opacity: 0.5;
 }
 
-.temperature-second-day {
-  margin-left: 171px;
-}
-
-.temperature-third-day {
-  margin-left: 178px;
-}
-
-.temperature-fourth-day {
-  margin-left: 173px;
-}
-
-.temperature-fifth-day {
-  margin-left: 174px;
-}
-
 #footer {
   color: whitesmoke;
   display: block;
   text-align: center;
+  position: relative;
+  bottom: 80px;
 }
 
 #footer a {
