@@ -152,7 +152,9 @@ form {
   bottom: 80px;
 }
 
-#footer a {
+#githubLink,
+#netlifyLink {
+  color: whitesmoke;
   text-decoration: none;
   font-weight: bolder;
 }
