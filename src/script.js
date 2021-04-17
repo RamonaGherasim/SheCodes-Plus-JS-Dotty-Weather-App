@@ -25,24 +25,28 @@ function formatForecastDate (timestamp) {
 function displayForecast (response) {
   let forecastDayElement = response.data.daily;
   let forecastElement = document.querySelector ("#forecast");
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = "";
   forecastDayElement.forEach(function (forecastDay, index) {
     if (index < 5) {
   forecastHTML = forecastHTML + ` 
-                    <div class="first-day">
+  <div class="row">
+                    <div class="col-4 first-day">
                       <p class="forecast-date">${formatForecastDate(forecastDay.dt)}</p>
+                      </div>
+                      <div class="col-4">
                       <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="40" />
+                       </div>
+                        <div class="col-4">
                       <span class="temperature-first-day">
                         <p class="forecast-max-temp">${Math.round(forecastDay.temp.max)}°</p>
                         |
                         <p class="forecast-min-temp">${Math.round(forecastDay.temp.min)}°</p>
                       </span>
-                    </div>
+                      </div>
                   </div>`;
     }
 });
 
-forecastHTML = forecastHTML + `</div>`;
 forecastElement.innerHTML = forecastHTML;
 }
 
@@ -64,7 +68,6 @@ function showSearchedCityWeatherResult (response) {
   document.querySelector("#today-high").innerHTML = `H: ${Math.round(response.data.main.temp_max)}° | `;
   document.querySelector("#today-low").innerHTML = `| L: ${Math.round(response.data.main.temp_min)}°`;
   celsiusTemperature = response.data.main.temp;
-  console.log (response)
   getForecast (response.data.coord);
 }
 
